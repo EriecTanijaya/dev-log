@@ -1,0 +1,23 @@
+{
+	"name": "dev-log",
+	"module": "index.ts",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"lint": "bunx biome check --write",
+		"start:dev": "bun --hot ./packages/index.ts"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.4",
+		"@types/bun": "latest",
+		"@types/react-dom": "^19.1.9",
+		"bun-plugin-tailwind": "^0.0.15"
+	},
+	"peerDependencies": {
+		"typescript": "^5"
+	},
+	"dependencies": {
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1"
+	}
+}
