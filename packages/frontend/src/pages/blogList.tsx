@@ -21,7 +21,12 @@ export function BlogList() {
 
 	return (
 		<div className="flex flex-col">
-			<header>Header</header>
+			<header className="flex h-10 p-4 items-center">
+				<p className="font-bold">
+					{/** biome-ignore lint/suspicious/noCommentText: double slash for name */}
+					Eriec // Dev/Log
+				</p>
+			</header>
 			<main>Main</main>
 			<footer className="flex fixed bottom-0 w-full h-1/13 justify-evenly items-center bg-slate-200">
 				<Button>
