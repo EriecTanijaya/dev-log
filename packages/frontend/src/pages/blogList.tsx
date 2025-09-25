@@ -6,7 +6,7 @@ export function BlogList() {
 	const scrollDirection = useScrollDirection();
 
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col h-dvh">
 			<header
 				className={`flex fixed w-full h-15 p-4 items-center bg-slate-200 transition-all duration-700 ${scrollDirection === "down" ? `-top-15` : `top-0`}`}
 			>
@@ -78,8 +78,11 @@ export function BlogList() {
 					</div>
 				</div>
 			</main>
-			<footer className="flex fixed bottom-0 w-full h-15 justify-evenly items-center bg-slate-200 pt-2">
-				<a href="#" className="border-b-4 pb-4 border-b-slate-600">
+			<footer className="flex fixed bottom-0 w-full justify-evenly items-center bg-slate-200 pt-2">
+				<a
+					href="#"
+					className="border-b-4 border-b-slate-600 pb-[calc(1rem+env(safe-area-inset-bottom))]"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="32"
@@ -93,7 +96,7 @@ export function BlogList() {
 					</svg>
 				</a>
 
-				<a href="#">
+				<a href="#" className="pb-[calc(1rem+env(safe-area-inset-bottom))]">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="32"
