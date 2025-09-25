@@ -1,15 +1,7 @@
 # dev-log
 
-To install dependencies:
+icon i used: https://phosphoricons.com/
 
-```bash
-bun install
-```
-
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.22. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+references:
+- https://dribbble.com/shots/3522415-Mobile-Blog-App-Interaction
+- https://cdn.dribbble.com/users/83361/screenshots/3522415/attachments/780917/hd_preview_.mp4
