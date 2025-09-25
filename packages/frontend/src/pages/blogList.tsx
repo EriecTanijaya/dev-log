@@ -49,7 +49,7 @@ export function BlogList() {
 						</div>
 					</div>
 				</div>
-				<div className="">
+				<div className="space-y-6">
 					<div className="flex flex-col space-y-5 w-full">
 						<h1 className="font-semibold text-5xl">Projects</h1>
 						<p>whatever creating</p>
@@ -63,7 +63,7 @@ export function BlogList() {
 						/>
 					</div>
 				</div>
-				<div className="">
+				<div className="space-y-6">
 					<div className="flex flex-col space-y-5 w-full">
 						<h1 className="font-semibold text-5xl">Photo</h1>
 						<p>whatever photo</p>
