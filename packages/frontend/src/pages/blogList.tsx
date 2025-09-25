@@ -15,14 +15,14 @@ export function BlogList() {
 					Eriec // Dev/Log
 				</p>
 			</header>
-			<main className="flex flex-col items-center justify-center px-5 py-15">
-				<div>
-					<div className="flex flex-col space-y-5 w-full">
+			<main className="flex flex-col items-center justify-center px-5 py-20 space-y-6">
+				<div className="space-y-6">
+					<div className="flex flex-col space-y-5">
 						<h1 className="font-semibold text-5xl">Blogs</h1>
 						<p>whatever writings</p>
 					</div>
-					<div className="flex flex-col">
-						<h1 className="font-medium">feat: initial commit</h1>
+					<div className="flex flex-col space-y-5">
+						<h1 className="font-medium text-lg">feat: initial commit</h1>
 						<img
 							className="aspect-square object-cover"
 							src="assets/blog-portrait-image.jpg"
