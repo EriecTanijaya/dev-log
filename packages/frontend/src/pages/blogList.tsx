@@ -12,7 +12,7 @@ export function BlogList() {
 					Eriec // Dev/Log
 				</p>
 			</header>
-			<main className="snap-y snap-mandatory overflow-y-scroll h-[calc(100vh---spacing(32))] scroll-pt-16 scroll-pb-16 mt-16">
+			<main className="snap-y snap-mandatory overflow-y-scroll h-[calc(100vh---spacing(16))] mt-16">
 				<CategoryCard />
 				<CategoryCard />
 				<CategoryCard />
@@ -55,7 +55,7 @@ export function BlogList() {
 
 function CategoryCard() {
 	return (
-		<div className="space-y-6 snap-start min-h-[60vh] m-3">
+		<div className="snap-start h-[calc(100vh---spacing(32))] m-3 flex flex-col justify-around last:mb-16">
 			<div className="flex flex-col space-y-5">
 				<h1 className="font-extrabold text-5xl">Blogs</h1>
 				<p>whatever writings</p>
