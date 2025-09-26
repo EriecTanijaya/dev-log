@@ -3,49 +3,23 @@ import { useEffect, useState } from "react";
 export function BlogList() {
 	// todo: create a whole page first, and then separate the components
 
-	const scrollDirection = useScrollDirection();
+	// const scrollDirection = useScrollDirection();
 
 	return (
-		<div className="flex flex-col h-dvh">
+		<div>
 			<header
-				className={`flex fixed w-full h-16 p-4 items-center bg-slate-200 transition-all duration-700 ${scrollDirection === "down" ? `-top-15` : `top-0`}`}
+				className="flex fixed w-full h-16 p-4 items-center bg-slate-200 top-0
+			"
 			>
 				<p className="font-black">
 					{/** biome-ignore lint/suspicious/noCommentText: double slash for name */}
 					Eriec // Dev/Log
 				</p>
 			</header>
-			<main className="flex flex-col items-center justify-center snap-y snap-mandatory overflow-y-scroll h-[calc(100vh---spacing(32))]">
-				<div className="snap-start min-h-[70vh] bg-blue-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
-					<h2 className="text-2xl font-bold mb-4">Card 1</h2>
-					<p className="text-center max-w-sm">
-						This card will snap to the top, just below the header. The fixed
-						header remains visible as you scroll down.
-					</p>
-				</div>
-
-				<div className="snap-start min-h-[70vh] bg-purple-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
-					<h2 className="text-2xl font-bold mb-4">Card 2</h2>
-					<p className="text-center max-w-sm">
-						Scroll down and release. The browser will automatically scroll to
-						the top of this card, perfectly aligned.
-					</p>
-				</div>
-
-				<div className="snap-start min-h-[70vh] bg-green-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
-					<h2 className="text-2xl font-bold mb-4">Card 3</h2>
-					<p className="text-center max-w-sm">
-						The `scroll-padding-top` property is what makes this a smooth
-						experience and prevents the header from covering the content.
-					</p>
-				</div>
-
-				<div className="snap-start min-h-[70vh] bg-pink-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
-					<h2 className="text-2xl font-bold mb-4">Card 4</h2>
-					<p className="text-center max-w-sm">
-						Enjoy your perfectly aligned, scroll-snapping cards!
-					</p>
-				</div>
+			<main className="snap-y snap-mandatory overflow-y-scroll h-[calc(100vh---spacing(32))] scroll-pt-16 scroll-pb-16 mt-16">
+				<CategoryCard />
+				<CategoryCard />
+				<CategoryCard />
 			</main>
 			<footer className="flex fixed bottom-0 w-full justify-evenly items-center bg-slate-200 h-16 pt-3">
 				<a
@@ -83,44 +57,9 @@ export function BlogList() {
 	);
 }
 
-function useScrollDirection(): "up" | "down" | "" {
-	const [scrollDirection, setScrollDirection] = useState<"up" | "down" | "">(
-		"",
-	);
-	const [lastScrollY, setLastScrollY] = useState(0);
-
-	useEffect(() => {
-		const scrollBuffer = 0;
-
-		const updateScrollDirection = () => {
-			const currentScrollY = window.scrollY;
-
-			if (Math.abs(currentScrollY - lastScrollY) < 30) {
-				return;
-			}
-
-			const direction =
-				currentScrollY > lastScrollY && currentScrollY > scrollBuffer
-					? "down"
-					: "up";
-
-			setScrollDirection(direction);
-			setLastScrollY(currentScrollY);
-		};
-
-		window.addEventListener("scroll", updateScrollDirection);
-
-		return () => {
-			window.removeEventListener("scroll", updateScrollDirection);
-		};
-	}, [lastScrollY]);
-
-	return scrollDirection;
-}
-
 function CategoryCard() {
 	return (
-		<div className="space-y-6 snap-start">
+		<div className="space-y-6 snap-start min-h-[60vh] m-3">
 			<div className="flex flex-col space-y-5">
 				<h1 className="font-extrabold text-5xl">Blogs</h1>
 				<p>whatever writings</p>
