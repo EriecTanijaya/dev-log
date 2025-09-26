@@ -1,9 +1,11 @@
 import { serve } from "bun";
 import blogListPage from "./frontend/src/pages/blogList.html";
+import testPage from "./frontend/src/pages/test.html";
 
 const server = serve({
 	routes: {
 		"/": blogListPage,
+		"/test": testPage,
 		"/assets/*": {
 			GET: (req) => {
 				const wantedAsset = req.url.split("/assets/")[1];
