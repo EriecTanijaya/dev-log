@@ -15,7 +15,7 @@ export function BlogList() {
 					Eriec // Dev/Log
 				</p>
 			</header>
-			<main className="flex py-20 flex-col items-center justify-center pl-5 space-y-6">
+			<main className="flex py-20 flex-col items-center justify-center pl-5">
 				<div className="space-y-6">
 					<div className="flex flex-col space-y-5">
 						<h1 className="font-extrabold text-5xl">Blogs</h1>
