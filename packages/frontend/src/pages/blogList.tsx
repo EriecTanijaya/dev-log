@@ -8,124 +8,46 @@ export function BlogList() {
 	return (
 		<div className="flex flex-col h-dvh">
 			<header
-				className={`flex fixed w-full h-15 p-4 items-center bg-slate-200 transition-all duration-700 ${scrollDirection === "down" ? `-top-15` : `top-0`}`}
+				className={`flex fixed w-full h-16 p-4 items-center bg-slate-200 transition-all duration-700 ${scrollDirection === "down" ? `-top-15` : `top-0`}`}
 			>
 				<p className="font-black">
 					{/** biome-ignore lint/suspicious/noCommentText: double slash for name */}
 					Eriec // Dev/Log
 				</p>
 			</header>
-			<main className="flex py-20 flex-col items-center justify-center pl-5">
-				<div className="space-y-6">
-					<div className="flex flex-col space-y-5">
-						<h1 className="font-extrabold text-5xl">Blogs</h1>
-						<p>whatever writings</p>
-					</div>
-					<div className="flex flex-col space-y-3">
-						<h1 className="font-bold text-lg">ARTICLES</h1>
-						<div className="flex snap-mandatory snap-x overflow-x-auto">
-							<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5 first:mr-0"></div>
-							<div
-								className={`flex flex-col size-80 bg-cover bg-center snap-start shrink-0 mr-3.5 bg-slate-400 bg-[url(assets/blog-landscape-image.jpg)] bg-blend-multiply p-5 justify-between space-y-4`}
-							>
-								<h1 className="text-3xl text-white font-semibold wrap-break-word">
-									why i write this asdasdas dasd
-								</h1>
-								<div className="space-y-5">
-									<div className="flex flex-row gap-6">
-										<div className="flex flex-row items-center space-x-1">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="32"
-												height="32"
-												fill="#000000"
-												viewBox="0 0 256 256"
-												className="fill-white"
-											>
-												<title>clock icon</title>
-												<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
-											</svg>
-											<p className="text-white font-semibold">12 min</p>
-										</div>
-										<div className="flex flex-row items-center space-x-1">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												width="32"
-												height="32"
-												fill="#000000"
-												viewBox="0 0 256 256"
-												className="fill-white"
-											>
-												<title>heart icon</title>
-												<path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"></path>
-											</svg>
-											<p className="text-white font-semibold">245</p>
-										</div>
-									</div>
-									<div className="flex flex-row items-center space-x-5">
-										<img
-											src="assets/profile.jpg"
-											alt="profile"
-											className="rounded-full size-14 object-cover"
-										/>
-										<p className="text-white">clara</p>
-									</div>
-								</div>
-							</div>
-							<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5">
-								<img
-									className="aspect-square object-cover h-80"
-									src="assets/blog-portrait-image.jpg"
-									alt="blog"
-								/>
-							</div>
-							<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5">
-								<img
-									className="aspect-square object-cover h-80"
-									src="assets/blog-portrait-image.jpg"
-									alt="blog"
-								/>
-							</div>
-							<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5">
-								<img
-									className="aspect-square object-cover h-80"
-									src="assets/blog-portrait-image.jpg"
-									alt="blog"
-								/>
-							</div>
-						</div>
-					</div>
+			<main className="flex flex-col items-center justify-center snap-y snap-mandatory overflow-y-scroll h-[calc(100vh---spacing(32))]">
+				<div className="snap-start min-h-[70vh] bg-blue-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
+					<h2 className="text-2xl font-bold mb-4">Card 1</h2>
+					<p className="text-center max-w-sm">
+						This card will snap to the top, just below the header. The fixed
+						header remains visible as you scroll down.
+					</p>
 				</div>
-				<div className="space-y-6">
-					<div className="flex flex-col space-y-5 w-full">
-						<h1 className="font-semibold text-5xl">Projects</h1>
-						<p>whatever creating</p>
-					</div>
-					<div className="flex flex-col">
-						<h1 className="font-medium">feat: initial commit</h1>
-						<img
-							className="aspect-square object-cover"
-							src="assets/blog-landscape-image.jpg"
-							alt="blog"
-						/>
-					</div>
+
+				<div className="snap-start min-h-[70vh] bg-purple-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
+					<h2 className="text-2xl font-bold mb-4">Card 2</h2>
+					<p className="text-center max-w-sm">
+						Scroll down and release. The browser will automatically scroll to
+						the top of this card, perfectly aligned.
+					</p>
 				</div>
-				<div className="space-y-6">
-					<div className="flex flex-col space-y-5 w-full">
-						<h1 className="font-semibold text-5xl">Photo</h1>
-						<p>whatever photo</p>
-					</div>
-					<div className="flex flex-col">
-						<h1 className="font-medium">feat: initial commit</h1>
-						<img
-							className="aspect-square object-cover"
-							src="assets/blog-portrait-image.jpg"
-							alt="blog"
-						/>
-					</div>
+
+				<div className="snap-start min-h-[70vh] bg-green-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
+					<h2 className="text-2xl font-bold mb-4">Card 3</h2>
+					<p className="text-center max-w-sm">
+						The `scroll-padding-top` property is what makes this a smooth
+						experience and prevents the header from covering the content.
+					</p>
+				</div>
+
+				<div className="snap-start min-h-[70vh] bg-pink-500 text-white flex flex-col items-center justify-center p-8 rounded-lg shadow-md m-4">
+					<h2 className="text-2xl font-bold mb-4">Card 4</h2>
+					<p className="text-center max-w-sm">
+						Enjoy your perfectly aligned, scroll-snapping cards!
+					</p>
 				</div>
 			</main>
-			<footer className="flex fixed bottom-0 w-full justify-evenly items-center bg-slate-200 pt-2">
+			<footer className="flex fixed bottom-0 w-full justify-evenly items-center bg-slate-200 h-16 pt-3">
 				<a
 					href="#"
 					className="border-b-4 border-b-slate-600 pb-[calc(1rem+env(safe-area-inset-bottom))]"
@@ -194,4 +116,89 @@ function useScrollDirection(): "up" | "down" | "" {
 	}, [lastScrollY]);
 
 	return scrollDirection;
+}
+
+function CategoryCard() {
+	return (
+		<div className="space-y-6 snap-start">
+			<div className="flex flex-col space-y-5">
+				<h1 className="font-extrabold text-5xl">Blogs</h1>
+				<p>whatever writings</p>
+			</div>
+			<div className="flex flex-col space-y-3">
+				<h1 className="font-bold text-lg">ARTICLES</h1>
+				<div className="flex snap-mandatory snap-x overflow-x-auto">
+					<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5 first:mr-0"></div>
+					<div
+						className={`flex flex-col size-80 bg-cover bg-center snap-start shrink-0 mr-3.5 bg-slate-400 bg-[url(assets/blog-landscape-image.jpg)] bg-blend-multiply p-5 justify-between space-y-4`}
+					>
+						<h1 className="text-3xl text-white font-semibold wrap-break-word">
+							why i write this asdasdas dasd
+						</h1>
+						<div className="space-y-5">
+							<div className="flex flex-row gap-6">
+								<div className="flex flex-row items-center space-x-1">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										fill="#000000"
+										viewBox="0 0 256 256"
+										className="fill-white"
+									>
+										<title>clock icon</title>
+										<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"></path>
+									</svg>
+									<p className="text-white font-semibold">12 min</p>
+								</div>
+								<div className="flex flex-row items-center space-x-1">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="32"
+										height="32"
+										fill="#000000"
+										viewBox="0 0 256 256"
+										className="fill-white"
+									>
+										<title>heart icon</title>
+										<path d="M178,40c-20.65,0-38.73,8.88-50,23.89C116.73,48.88,98.65,40,78,40a62.07,62.07,0,0,0-62,62c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,228.66,240,172,240,102A62.07,62.07,0,0,0,178,40ZM128,214.8C109.74,204.16,32,155.69,32,102A46.06,46.06,0,0,1,78,56c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,155.61,146.24,204.15,128,214.8Z"></path>
+									</svg>
+									<p className="text-white font-semibold">245</p>
+								</div>
+							</div>
+							<div className="flex flex-row items-center space-x-5">
+								<img
+									src="assets/profile.jpg"
+									alt="profile"
+									className="rounded-full size-14 object-cover"
+								/>
+								<p className="text-white">clara</p>
+							</div>
+						</div>
+					</div>
+					<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5">
+						<img
+							className="aspect-square object-cover h-80"
+							src="assets/blog-portrait-image.jpg"
+							alt="blog"
+						/>
+					</div>
+					<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5">
+						<img
+							className="aspect-square object-cover h-80"
+							src="assets/blog-portrait-image.jpg"
+							alt="blog"
+						/>
+					</div>
+					<div className="flex flex-col space-y-5 snap-start shrink-0 mr-3.5">
+						<img
+							className="aspect-square object-cover h-80"
+							src="assets/blog-portrait-image.jpg"
+							alt="blog"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
