@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import "./styles.css";
-import { BlogList } from "./pages/blogList";
+import { ArticlePage } from "./pages/articlePage";
+import { BlogListPage } from "./pages/blogListPage";
 
 const rootElem = document.getElementById("root");
 
@@ -10,4 +11,9 @@ if (!rootElem) {
 
 const root = createRoot(rootElem);
 
-root.render(<BlogList />);
+const routes = new Map();
+
+routes.set("/", <BlogListPage />);
+routes.set("/detail", <ArticlePage />);
+
+root.render(routes.get(window.location.pathname));
