@@ -55,14 +55,18 @@ export function BlogList() {
 
 function CategoryCard() {
 	return (
-		<div className="snap-start h-[calc(100vh---spacing(32))] m-3 flex flex-col justify-around last:mb-16">
-			<div className="flex flex-col space-y-5">
+		<div className="snap-start h-[calc(100vh---spacing(32))] m-3 flex flex-col justify-center space-y-16 last:mb-16">
+			<div className="flex flex-col space-y-7">
 				<h1 className="font-extrabold text-5xl">Blogs</h1>
-				<p>whatever writings</p>
+				<p>
+					whatever writings a;sjdkasjdkajd asdjaskdj alskdjalksd
+					asldjaslkdjadjasd j akjsdjaskld jasdjals dlasdjalsdjals da
+				</p>
 			</div>
-			<div className="flex flex-col space-y-3">
+			<div className="flex flex-col space-y-9">
 				<h1 className="font-bold text-lg">ARTICLES</h1>
 				<div className="flex snap-mandatory snap-x overflow-x-auto">
+					<ArticleCard />
 					<ArticleCard />
 					<ArticleCard />
 				</div>
