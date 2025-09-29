@@ -6,7 +6,7 @@ export function ArticlePage() {
 	return (
 		<div>
 			<Header />
-			<Main>hehehe</Main>
+			<Main className="p-3">hehehe</Main>
 			<Footer />
 		</div>
 	);
