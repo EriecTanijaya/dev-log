@@ -55,17 +55,14 @@ export function BlogListPage() {
 
 function CategoryCard() {
 	return (
-		<div className="snap-start h-[calc(100vh---spacing(32))] m-3 flex flex-col justify-center space-y-16 last:mb-16">
-			<div className="flex flex-col space-y-7">
-				<h1 className="font-extrabold text-5xl">Blogs</h1>
-				<p>
-					whatever writings a;sjdkasjdkajd asdjaskdj alskdjalksd
-					asldjaslkdjadjasd j akjsdjaskld jasdjals dlasdjalsdjals da
-				</p>
+		<div className="snap-start h-[calc(100vh---spacing(32))] flex flex-col justify-start space-y-5 pt-4 last:mb-16">
+			<div className="flex flex-col space-y-3 mx-3">
+				<h1 className="font-extrabold text-3xl">Blogs</h1>
+				<p>whatever writings a;sd;lasdasd asdjasdjklasjdlasj dlasjdas </p>
 			</div>
-			<div className="flex flex-col space-y-9">
-				<h1 className="font-bold text-lg">ARTICLES</h1>
-				<div className="flex snap-mandatory snap-x overflow-x-auto">
+			<div className="flex flex-col space-y-3">
+				<h1 className="font-bold text-xl mx-3">Articles</h1>
+				<div className="flex snap-mandatory snap-x overflow-x-auto gap-3 scroll-px-3">
 					<ArticleCard />
 					<ArticleCard />
 					<ArticleCard />
@@ -77,8 +74,8 @@ function CategoryCard() {
 
 function ArticleCard() {
 	return (
-		<a href="/detail">
-			<div className="flex flex-col size-80 bg-cover bg-center snap-start shrink-0 mr-3.5 bg-slate-400 bg-[url(assets/blog-landscape-image.jpg)] bg-blend-multiply p-5 justify-between space-y-4">
+		<a href="/detail" className="first:ml-3 last:mr-3">
+			<div className="flex flex-col size-80 bg-cover bg-center snap-start shrink-0 bg-slate-400 bg-[url(assets/blog-landscape-image.jpg)] bg-blend-multiply p-5 justify-between space-y-4">
 				<h1 className="text-3xl text-white font-semibold wrap-break-word">
 					why i write this shitttttt
 				</h1>
