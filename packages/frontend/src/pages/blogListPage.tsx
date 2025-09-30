@@ -8,7 +8,7 @@ export function BlogListPage() {
 	return (
 		<div>
 			<Header />
-			<Main className="snap-y snap-mandatory overflow-y-scroll">
+			<Main className="h-[calc(100vh---spacing(16))] snap-y snap-mandatory overflow-y-scroll">
 				<CategoryCard />
 				<CategoryCard />
 				<CategoryCard />
@@ -23,7 +23,7 @@ function CategoryCard() {
 		<div className="snap-start h-[calc(100vh---spacing(32))] flex flex-col justify-start space-y-5 pt-4 last:mb-16">
 			<div className="flex flex-col space-y-3 mx-3">
 				<h1 className="font-extrabold text-3xl">Blogs</h1>
-				<p>whatever writings a;sd;lasdasd asdjasdjklasjdlasj dlasjdas </p>
+				<p>whatever writings a;sd;lasdasd asdjasdjklasjdlasj dlasjdas</p>
 			</div>
 			<div className="flex flex-col space-y-3">
 				<h1 className="font-bold text-xl mx-3">Articles</h1>
