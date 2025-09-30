@@ -42,9 +42,9 @@ function ArticleCard() {
 		<a href="/detail" className="first:ml-3 last:mr-3">
 			<div className="relative size-80 snap-start">
 				<img
-					src="assets/blog-landscape-image.jpg"
+					src="assets/blog-portrait-image.jpg"
 					alt="placehold"
-					className="size-80"
+					className="size-80 object-cover object-center"
 				/>
 				<div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 				<div className="absolute bottom-0 left-0 right-0 p-4 text-white space-y-4">

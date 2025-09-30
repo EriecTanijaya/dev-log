@@ -1,7 +1,7 @@
 import { Footer } from "../components/footer";
 import { Main } from "../components/main";
 
-// todo: add progress bar reading, add header title
+// todo: add progress bar reading
 
 export function ArticlePage() {
 	return (
@@ -27,12 +27,15 @@ export function ArticlePage() {
 					<p className="text-sm">29 JULY 1998 - BLOG</p>
 				</div>
 			</header>
-			<Main className="p-3 indent-7 text-justify mb-16 flex flex-col gap-7">
+			<Main className="p-3 mb-16 flex flex-col gap-6">
 				<img
 					src="assets/blog-portrait-image.jpg"
 					alt="blog"
-					className="size-80 m-auto"
+					className="size-80 m-auto object-cover object-center"
 				/>
+
+				<h1 className="text-3xl font-semibold">why i write this shitttttt</h1>
+
 				<p>
 					Maintaining a positive outlook during challenging times is crucial for
 					both mental and emotional well-being. Difficult days can often lead to
@@ -45,6 +48,29 @@ export function ArticlePage() {
 					individuals to confront their challenges with a renewed sense of
 					purpose and determination.
 				</p>
+
+				{/**
+				 * todo: add more button same as ref
+				 */}
+
+				<div className="flex gap-3 justify-center">
+					<img
+						src="assets/blog-landscape-image.jpg"
+						alt="blog"
+						className="size-24 object-cover object-center"
+					/>
+					<img
+						src="assets/blog-portrait-image.jpg"
+						alt="blog"
+						className="size-24 object-cover object-center"
+					/>
+					<img
+						src="assets/blog-landscape-image.jpg"
+						alt="blog"
+						className="size-24 object-cover object-center"
+					/>
+					<div className="absolute">more</div>
+				</div>
 
 				<p>
 					The significance of positivity extends beyond mere emotional comfort;
