@@ -17,3 +17,6 @@ routes.set("/", <BlogListPage />);
 routes.set("/detail", <ArticlePage />);
 
 root.render(routes.get(window.location.pathname));
+
+// todo
+// create the easter egg on browser console
