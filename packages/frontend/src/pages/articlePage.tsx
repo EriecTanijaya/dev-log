@@ -1,7 +1,7 @@
 import { Footer } from "../components/footer";
 import { Main } from "../components/main";
 
-// todo: add progress bar reading
+// todo: add progress bar reading, add header title
 
 export function ArticlePage() {
 	return (
