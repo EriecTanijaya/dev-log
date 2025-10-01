@@ -6,7 +6,7 @@ import { Main } from "../components/main";
 export function ArticlePage() {
 	return (
 		<div>
-			<header className="flex fixed w-full h-16 p-4 items-center bg-slate-200 top-0 gap-3">
+			<header className="flex fixed w-full h-16 p-4 items-center bg-slate-200 top-0 gap-3 z-1">
 				<a href="/">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
