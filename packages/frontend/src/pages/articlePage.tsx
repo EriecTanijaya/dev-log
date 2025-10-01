@@ -69,12 +69,32 @@ export function ArticlePage() {
 						alt="blog"
 						className="size-24 object-cover object-center"
 					/>
-					<button
-						type="button"
+					<a
+						href="#lightbox"
 						className="absolute right-5 bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"
 					>
 						more
-					</button>
+					</a>
+				</div>
+
+				<div
+					id="lightbox"
+					className="hidden target:block fixed z-1 inset-0 bg-black/75 p-3"
+				>
+					<a href="#" className="absolute right-0">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="32"
+							height="32"
+							fill="#000000"
+							viewBox="0 0 256 256"
+							className="fill-white"
+						>
+							<title>close icon</title>
+							<path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+						</svg>
+					</a>
+					<img src="assets/blog-portrait-image.jpg" alt="blog" />
 				</div>
 
 				<p>
