@@ -34,7 +34,7 @@ export function ArticlePage() {
 					className="size-80 m-auto object-cover object-center"
 				/>
 
-				<h1 className="text-3xl font-semibold">why i write this shitttttt</h1>
+				<h1 className="text-3xl font-bold">why i write this shitttttt</h1>
 
 				<p>
 					Maintaining a positive outlook during challenging times is crucial for
@@ -53,7 +53,7 @@ export function ArticlePage() {
 				 * todo: add more button same as ref
 				 */}
 
-				<div className="flex gap-3 justify-center">
+				<div className="flex gap-3 justify-center items-center">
 					<img
 						src="assets/blog-landscape-image.jpg"
 						alt="blog"
@@ -69,7 +69,12 @@ export function ArticlePage() {
 						alt="blog"
 						className="size-24 object-cover object-center"
 					/>
-					<div className="absolute">more</div>
+					<button
+						type="button"
+						className="absolute right-5 bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"
+					>
+						more
+					</button>
 				</div>
 
 				<p>
