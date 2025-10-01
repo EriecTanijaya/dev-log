@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Footer } from "../components/footer";
 import { Main } from "../components/main";
 
 // todo: add progress bar reading
 
 export function ArticlePage() {
+	const [isShowLightbox, setShowLightbox] = useState(false);
+
 	return (
 		<div>
 			<header className="flex fixed w-full h-16 p-4 items-center bg-slate-200 top-0 gap-3 z-1">
@@ -53,49 +56,79 @@ export function ArticlePage() {
 				 * todo: add more button same as ref
 				 */}
 
-				<div className="flex gap-3 justify-center items-center">
+				<div
+					className={`flex gap-3 transition-transform ease-in-out duration-1000 ${isShowLightbox ? `flex-col fixed z-1 inset-0 bg-white p-3 overflow-y-scroll overscroll-contain` : `justify-center items-center`}`}
+				>
 					<img
 						src="assets/blog-landscape-image.jpg"
 						alt="blog"
-						className="size-24 object-cover object-center"
+						className={
+							isShowLightbox ? `` : `size-24 object-cover object-center`
+						}
 					/>
 					<img
 						src="assets/blog-portrait-image.jpg"
 						alt="blog"
-						className="size-24 object-cover object-center"
+						className={
+							isShowLightbox ? `` : `size-24 object-cover object-center`
+						}
 					/>
 					<img
 						src="assets/blog-landscape-image.jpg"
 						alt="blog"
-						className="size-24 object-cover object-center"
+						className={
+							isShowLightbox ? `` : `size-24 object-cover object-center`
+						}
 					/>
-					<a
-						href="#lightbox"
-						className="absolute right-5 bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"
+					<button
+						type="button"
+						className={`bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm ${isShowLightbox ? `fixed top-11/12 left-1/2 -translate-x-1/2 -translate-y-1/2` : `absolute right-5`}`}
+						onClick={() => setShowLightbox(!isShowLightbox)}
 					>
-						more
-					</a>
+						{isShowLightbox ? `less` : `more`}
+					</button>
 				</div>
 
-				<div
-					id="lightbox"
-					className="hidden target:block fixed z-1 inset-0 bg-black/75 p-3"
-				>
-					<a href="#" className="absolute right-0">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="32"
-							height="32"
-							fill="#000000"
-							viewBox="0 0 256 256"
-							className="fill-white"
+				{/* {isShowLightbox ? (
+					<div className="fixed z-1 inset-0 bg-white p-3 overflow-y-scroll gap-3 flex flex-col overscroll-contain transition-all duration-1000">
+						<img src="assets/blog-portrait-image.jpg" alt="blog" />
+						<img src="assets/blog-landscape-image.jpg" alt="blog" />
+						<img src="assets/blog-portrait-image.jpg" alt="blog" />
+
+						<button
+							type="button"
+							className="fixed font-semibold text-sm bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white top-11/12 left-1/2 -translate-x-1/2 -translate-y-1/2"
+							onClick={() => setShowLightbox(false)}
 						>
-							<title>close icon</title>
-							<path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-						</svg>
-					</a>
-					<img src="assets/blog-portrait-image.jpg" alt="blog" />
-				</div>
+							less
+						</button>
+					</div>
+				) : (
+					<div className="flex gap-3 justify-center items-center transition-all duration-700">
+						<img
+							src="assets/blog-landscape-image.jpg"
+							alt="blog"
+							className="size-24 object-cover object-center"
+						/>
+						<img
+							src="assets/blog-portrait-image.jpg"
+							alt="blog"
+							className="size-24 object-cover object-center"
+						/>
+						<img
+							src="assets/blog-landscape-image.jpg"
+							alt="blog"
+							className="size-24 object-cover object-center"
+						/>
+						<button
+							type="button"
+							className="absolute right-5 bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"
+							onClick={() => setShowLightbox(true)}
+						>
+							more
+						</button>
+					</div>
+				)} */}
 
 				<p>
 					The significance of positivity extends beyond mere emotional comfort;
