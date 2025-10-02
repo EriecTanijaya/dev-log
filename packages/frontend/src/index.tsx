@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 import type { ReactElement } from "react";
+import { AboutPage } from "./pages/aboutPage";
 import { ArticlePage } from "./pages/articlePage";
 import { BlogListPage } from "./pages/blogListPage";
 
@@ -26,6 +27,10 @@ routes.set("/", {
 routes.set("/detail", {
 	title: "Article Title",
 	component: <ArticlePage />,
+});
+routes.set("/about", {
+	title: "About",
+	component: <AboutPage />,
 });
 
 const page = routes.get(window.location.pathname);

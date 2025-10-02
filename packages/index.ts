@@ -6,6 +6,7 @@ const server = serve({
 	routes: {
 		"/": indexPage,
 		"/detail": indexPage,
+		"/about": indexPage,
 		"/assets/*": {
 			GET: (req) => {
 				const wantedAsset = req.url.split("/assets/")[1];
