@@ -128,7 +128,7 @@ function Lightbox() {
 	const [isShowLightbox, setShowLightbox] = useState(false);
 
 	return isShowLightbox ? (
-		<div className="fixed z-1 inset-0 bg-white p-3 overflow-y-scroll gap-3 flex flex-col overscroll-contain transition-all duration-1000 ease-in-out">
+		<div className="fixed z-1 inset-0 bg-white p-3 overflow-y-scroll gap-3 flex flex-col overscroll-contain">
 			<img src="assets/blog-portrait-image.jpg" alt="blog" />
 			<img src="assets/blog-landscape-image.jpg" alt="blog" />
 			<img src="assets/blog-portrait-image.jpg" alt="blog" />
