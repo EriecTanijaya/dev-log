@@ -52,83 +52,46 @@ export function ArticlePage() {
 					purpose and determination.
 				</p>
 
-				{/**
-				 * todo: add more button same as ref
-				 */}
-
-				<div
-					className={`flex gap-3 transition-transform ease-in-out duration-1000 ${isShowLightbox ? `flex-col fixed z-1 inset-0 bg-white p-3 overflow-y-scroll overscroll-contain` : `justify-center items-center`}`}
-				>
-					<img
-						src="assets/blog-landscape-image.jpg"
-						alt="blog"
-						className={
-							isShowLightbox ? `` : `size-24 object-cover object-center`
-						}
-					/>
-					<img
-						src="assets/blog-portrait-image.jpg"
-						alt="blog"
-						className={
-							isShowLightbox ? `` : `size-24 object-cover object-center`
-						}
-					/>
-					<img
-						src="assets/blog-landscape-image.jpg"
-						alt="blog"
-						className={
-							isShowLightbox ? `` : `size-24 object-cover object-center`
-						}
-					/>
-					<button
-						type="button"
-						className={`bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm ${isShowLightbox ? `fixed top-11/12 left-1/2 -translate-x-1/2 -translate-y-1/2` : `absolute right-5`}`}
-						onClick={() => setShowLightbox(!isShowLightbox)}
-					>
-						{isShowLightbox ? `less` : `more`}
-					</button>
-				</div>
-
-				{/* {isShowLightbox ? (
-					<div className="fixed z-1 inset-0 bg-white p-3 overflow-y-scroll gap-3 flex flex-col overscroll-contain transition-all duration-1000">
+				{isShowLightbox ? (
+					<div className="fixed z-1 inset-0 bg-white p-3 overflow-y-scroll gap-3 flex flex-col overscroll-contain transition-all duration-1000 ease-in-out">
 						<img src="assets/blog-portrait-image.jpg" alt="blog" />
 						<img src="assets/blog-landscape-image.jpg" alt="blog" />
 						<img src="assets/blog-portrait-image.jpg" alt="blog" />
 
 						<button
 							type="button"
-							className="fixed font-semibold text-sm bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white top-11/12 left-1/2 -translate-x-1/2 -translate-y-1/2"
+							className="fixed font-semibold text-sm bg-teal-700 p-4 shadow-xl shadow-teal-700/50 rounded-lg text-white top-11/12 left-1/2 -translate-x-1/2 -translate-y-1/2"
 							onClick={() => setShowLightbox(false)}
 						>
 							less
 						</button>
 					</div>
 				) : (
-					<div className="flex gap-3 justify-center items-center transition-all duration-700">
+					<div className="flex justify-between items-center">
 						<img
 							src="assets/blog-landscape-image.jpg"
 							alt="blog"
-							className="size-24 object-cover object-center"
+							className="w-[calc(33.33%---spacing(3))] object-cover object-center aspect-square"
 						/>
 						<img
 							src="assets/blog-portrait-image.jpg"
 							alt="blog"
-							className="size-24 object-cover object-center"
+							className="w-[calc(33.33%---spacing(3))] object-cover object-center aspect-square"
 						/>
 						<img
 							src="assets/blog-landscape-image.jpg"
 							alt="blog"
-							className="size-24 object-cover object-center"
+							className="w-[calc(33.33%---spacing(3))] object-cover object-center aspect-square"
 						/>
 						<button
 							type="button"
-							className="absolute right-5 bg-teal-700 p-3 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"
+							className="absolute right-1 bg-teal-700 p-4 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"
 							onClick={() => setShowLightbox(true)}
 						>
 							more
 						</button>
 					</div>
-				)} */}
+				)}
 
 				<p>
 					The significance of positivity extends beyond mere emotional comfort;
