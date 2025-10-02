@@ -1,6 +1,6 @@
 export function Footer() {
 	return (
-		<footer className="flex fixed bottom-0 w-full justify-evenly items-center bg-slate-200 h-16 pt-3.5">
+		<footer className="flex fixed bottom-0 w-full justify-evenly items-end bg-slate-200 h-16">
 			<a
 				href="#"
 				className="border-b-4 border-b-slate-600 pb-[calc(1rem+env(safe-area-inset-bottom))]"
