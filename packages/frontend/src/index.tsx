@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./styles.css";
+import type { ReactElement } from "react";
 import { ArticlePage } from "./pages/articlePage";
 import { BlogListPage } from "./pages/blogListPage";
 
@@ -11,12 +12,27 @@ if (!rootElem) {
 
 const root = createRoot(rootElem);
 
-const routes = new Map();
+type Page = {
+	title: string;
+	component: ReactElement;
+};
 
-routes.set("/", <BlogListPage />);
-routes.set("/detail", <ArticlePage />);
+const routes = new Map<string, Page>();
 
-root.render(routes.get(window.location.pathname));
+routes.set("/", {
+	title: "Eriec // Dev/Log",
+	component: <BlogListPage />,
+});
+routes.set("/detail", {
+	title: "Article Title",
+	component: <ArticlePage />,
+});
+
+const page = routes.get(window.location.pathname);
+
+document.title = page?.title ?? "";
+
+root.render(page?.component);
 
 // todo
 // create the easter egg on browser console
