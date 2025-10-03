@@ -49,7 +49,7 @@ function ArticleCard() {
 				<div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
 				<div className="absolute bottom-0 left-0 right-0 p-4 text-white space-y-4">
 					<h1 className="text-2xl text-white font-semibold wrap-break-word">
-						why i write this shitttttt
+						cool article another one
 					</h1>
 					<div className="flex flex-row gap-6">
 						<div className="flex flex-row items-center space-x-1">
