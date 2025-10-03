@@ -2,6 +2,8 @@ import { serve } from "bun";
 
 import indexPage from "./frontend/src/index.html";
 
+// todo: https://docs.docker.com/guides/bun/develop/
+
 const server = serve({
 	routes: {
 		"/": indexPage,
@@ -14,6 +16,25 @@ const server = serve({
 				return new Response(
 					Bun.file(`./packages/frontend/src/assets/${wantedAsset}`),
 				);
+			},
+		},
+
+		"/api/categories": {
+			GET: () => {
+				return Response.json([
+					{
+						id: 1,
+						name: "Category 1",
+					},
+					{
+						id: 2,
+						name: "Category 2",
+					},
+					{
+						id: 3,
+						name: "Category 3",
+					},
+				]);
 			},
 		},
 	},
