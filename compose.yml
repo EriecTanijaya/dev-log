@@ -1,6 +1,5 @@
 services:
   backend:
-    image: 
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,7 +8,23 @@ services:
     develop:
       watch:
         - action: rebuild
-          path: .     
+          path: .
+    depends_on:
+      - db
+    env_file: .env
+
+  db:
+    image: postgres
+    restart: always
+    env_file: .env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
+
+
 
         # https://docs.docker.com/compose/intro/features-uses/
         # https://orm.drizzle.team/docs/guides/postgresql-local-setup
