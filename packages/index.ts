@@ -2,9 +2,8 @@ import { serve } from "bun";
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/node-postgres";
 import { integer, pgTable, varchar } from "drizzle-orm/pg-core";
+import { usersTable } from "./backend/src/userTable";
 import indexPage from "./frontend/src/index.html";
-
-// todo: https://docs.docker.com/guides/bun/develop/
 
 const server = serve({
 	routes: {
@@ -47,13 +46,6 @@ const server = serve({
 });
 
 const db = drizzle(process.env.DATABASE_URL!);
-
-export const usersTable = pgTable("users", {
-	id: integer().primaryKey().generatedAlwaysAsIdentity(),
-	name: varchar({ length: 255 }).notNull(),
-	age: integer().notNull(),
-	email: varchar({ length: 255 }).notNull().unique(),
-});
 
 async function testDB() {
 	const user: typeof usersTable.$inferInsert = {

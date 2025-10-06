@@ -23,9 +23,6 @@ services:
 volumes:
   postgres_data:
 
-
-
-
         # https://docs.docker.com/compose/intro/features-uses/
         # https://orm.drizzle.team/docs/guides/postgresql-local-setup
         # https://github.com/docker-library/docs/blob/master/postgres/README.md 
