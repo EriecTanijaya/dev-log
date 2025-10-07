@@ -41,12 +41,4 @@ const server = serve({
 	},
 });
 
-import { SQL } from "bun";
-
-const pg = new SQL(process.env.DATABASE_URL!);
-
-const res = await pg`SELECT 1`;
-
-console.log({ res });
-
 console.log(`Server listening on ${server.url}`);
