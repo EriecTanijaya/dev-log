@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"lint": "bunx biome check --write",
-		"start:dev": "bun ./packages/backend/src/migrateDb.ts && bun --hot --sql-preconnect ./packages/index.ts"
+		"start:dev": "bun --hot ./packages/index.ts"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.4",

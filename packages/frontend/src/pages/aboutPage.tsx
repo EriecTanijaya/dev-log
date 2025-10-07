@@ -12,9 +12,7 @@ export function AboutPage() {
 					alt="blog"
 					className="size-80 m-auto object-cover object-center"
 				/>
-
 				<h1 className="text-3xl font-bold">why i write this shitttttt</h1>
-
 				<p>mantap broooo</p>
 			</Main>
 			<Footer />
