@@ -1,8 +1,4 @@
 import { serve } from "bun";
-import { eq } from "drizzle-orm";
-import { drizzle } from "drizzle-orm/node-postgres";
-import { integer, pgTable, varchar } from "drizzle-orm/pg-core";
-import { usersTable } from "./backend/src/userTable";
 import indexPage from "./frontend/src/index.html";
 
 const server = serve({
@@ -45,37 +41,12 @@ const server = serve({
 	},
 });
 
-const db = drizzle(process.env.DATABASE_URL!);
+import { SQL } from "bun";
 
-async function testDB() {
-	const user: typeof usersTable.$inferInsert = {
-		name: "John",
-		age: 30,
-		email: "john@example.com",
-	};
-	await db.insert(usersTable).values(user);
-	console.log("New user created!");
-	const users = await db.select().from(usersTable);
-	console.log("Getting all users from the database: ", users);
-	/*
-  const users: {
-    id: number;
-    name: string;
-    age: number;
-    email: string;
-  }[]
-  */
-	await db
-		.update(usersTable)
-		.set({
-			age: 31,
-		})
-		.where(eq(usersTable.email, user.email));
-	console.log("User info updated!");
-	await db.delete(usersTable).where(eq(usersTable.email, user.email));
-	console.log("User deleted!");
-}
+const pg = new SQL(process.env.DATABASE_URL!);
 
-testDB();
+const res = await pg`SELECT 1`;
+
+console.log({ res });
 
 console.log(`Server listening on ${server.url}`);

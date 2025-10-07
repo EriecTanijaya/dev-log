@@ -2,11 +2,12 @@ FROM oven/bun:slim
 
 WORKDIR /app
 
-COPY package.json bun.lock ./
+COPY package.json .
 
-RUN bun install --production
+RUN bun install
 
 COPY . .
+
 EXPOSE 3000
 CMD [ "bun", "start:dev" ]
 
