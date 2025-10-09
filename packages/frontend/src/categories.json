@@ -1,10 +1,5 @@
 [
 	{
-		"category_id": "1",
-		"name": "Blogs",
-		"description": "My writings that interesting for me"
-	},
-	{
 		"category_id": "2",
 		"name": "Projects",
 		"description": "Some sort of development logs"

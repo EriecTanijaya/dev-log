@@ -25,7 +25,6 @@ export function BlogListPage() {
 				<MediaCategoryCard
 					description="Things that i want to shared with you"
 					name="Media"
-					key={1}
 				/>
 			</Main>
 			<Footer />
