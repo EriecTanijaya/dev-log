@@ -8,10 +8,5 @@
 		"category_id": "2",
 		"name": "Projects",
 		"description": "Some sort of development logs"
-	},
-	{
-		"category_id": "3",
-		"name": "Media",
-		"description": "Things that i want to shared with you"
 	}
 ]

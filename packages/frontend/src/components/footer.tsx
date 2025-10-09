@@ -2,13 +2,6 @@ export function Footer() {
 	return (
 		<footer className="fixed bottom-0 w-full bg-slate-200 h-16 flex flex-col justify-end">
 			<div className="flex justify-evenly items-center">
-				{/**
-				 *
-				 * // todo:
-				 *
-				 * - place the list of navbar on array, and set the logic of fill with accent and border bottom based on location pathname
-				 *
-				 */}
 				<a
 					href="/"
 					className={`pb-[calc(1rem+env(safe-area-inset-bottom))] ${window.location.pathname === `/` ? `border-b-4 border-b-teal-700 ` : ``}`}
