@@ -1,4 +1,3 @@
-import articles from "../articles.json";
 import categories from "../categories.json";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
@@ -16,9 +15,9 @@ export function BlogListPage() {
 						key={category.category_id}
 						description={category.description}
 						name={category.name}
-						articles={articles
-							.filter((article) => article.category_id === category.category_id)
-							.map((rawArticle) => toArticleDomain(rawArticle))}
+						articles={category.articles.map((rawArticle) =>
+							toArticleDomain(rawArticle),
+						)}
 					/>
 				))}
 
@@ -160,7 +159,6 @@ function ArticleCard({
 
 type RawArticle = {
 	article_id: string;
-	category_id: string;
 	title: string;
 	estimated_reading_time: number;
 	created_at: string;
