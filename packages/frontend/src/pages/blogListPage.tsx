@@ -3,6 +3,8 @@ import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Main } from "../components/main";
 
+enum 
+
 export function BlogListPage() {
 	// todo: create a whole page first, and then separate the components
 

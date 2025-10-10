@@ -1,11 +1,12 @@
-import { serve } from "bun";
+import { type RouterTypes, serve } from "bun";
+import {
+	type FrontendRoutes,
+	frontendRoutes,
+} from "./frontend/src/frontendRoutes";
 import indexPage from "./frontend/src/index.html";
 
 const server = serve({
 	routes: {
-		"/": indexPage,
-		"/detail": indexPage,
-		"/about": indexPage,
 		"/assets/*": {
 			GET: (req) => {
 				const wantedAsset = req.url.split("/assets/")[1];
@@ -15,25 +16,7 @@ const server = serve({
 				);
 			},
 		},
-
-		"/api/categories": {
-			GET: () => {
-				return Response.json([
-					{
-						id: 1,
-						name: "Category 1",
-					},
-					{
-						id: 2,
-						name: "Category 2",
-					},
-					{
-						id: 3,
-						name: "Category 3",
-					},
-				]);
-			},
-		},
+		...getServerRoutes(frontendRoutes),
 	},
 	development: {
 		console: true,
@@ -42,3 +25,16 @@ const server = serve({
 });
 
 console.log(`Server listening on ${server.url}`);
+
+function getServerRoutes(frontendRoutes: FrontendRoutes) {
+	const entries = frontendRoutes
+		.keys()
+		.reduce((acc, cur) => {
+			acc.set(cur, indexPage);
+
+			return acc;
+		}, new Map<string, RouterTypes.RouteValue<string>>())
+		.entries();
+
+	return Object.fromEntries(entries);
+}
