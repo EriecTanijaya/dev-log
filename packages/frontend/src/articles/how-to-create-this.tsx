@@ -1,7 +1,9 @@
+import { CATEGORY_ID } from "../categories";
 import { Lightbox } from "../components/article/lightbox";
 import { ArticlePage } from "../pages/articlePage";
+import type { Article } from "./article";
 
-export function HowToCreateThis() {
+function HowToCreateThis() {
 	return (
 		<ArticlePage>
 			<img
@@ -55,3 +57,13 @@ export function HowToCreateThis() {
 		</ArticlePage>
 	);
 }
+
+export const howToCreateThis: Article = {
+	slug: "how-to-create-this",
+	component: <HowToCreateThis />,
+	title: "How to create this?",
+	estimatedReadingTime: 24,
+	createdAt: "10 October 2025",
+	thumbnailUrl: "assets/how-to-create-this/thumbnail.jpg",
+	categoryId: CATEGORY_ID.BLOG,
+};

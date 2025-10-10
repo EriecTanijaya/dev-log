@@ -5,12 +5,12 @@ export const CATEGORY_ID = {
 
 export const categories = [
 	{
-		category_id: CATEGORY_ID.BLOG,
+		categoryId: CATEGORY_ID.BLOG,
 		name: "Blogs",
 		description: "Writings about the stuff that i interested with",
 	},
 	{
-		category_id: CATEGORY_ID.PROJECT,
+		categoryId: CATEGORY_ID.PROJECT,
 		name: "Projects",
 		description: "Some sort of development logs",
 	},

@@ -1,5 +1,7 @@
+import { CATEGORY_ID } from "../categories";
 import { Lightbox } from "../components/article/lightbox";
 import { ArticlePage } from "../pages/articlePage";
+import type { Article } from "./article";
 
 function HowToCreateThisAgain() {
 	return (
@@ -56,12 +58,12 @@ function HowToCreateThisAgain() {
 	);
 }
 
-export const howToCreateThisAgainArticle = {
-	articleId: "2",
+export const howToCreateThisAgain: Article = {
 	slug: "how-to-create-this-again",
 	component: <HowToCreateThisAgain />,
 	title: "How to create this again?",
 	estimatedReadingTime: 24,
 	createdAt: "10 October 2025",
-	imageUrl: "assets/how-to-create-this-again/thumbnail.jpg",
+	thumbnailUrl: "assets/how-to-create-this-again/thumbnail.jpg",
+	categoryId: CATEGORY_ID.BLOG,
 };

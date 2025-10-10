@@ -1,9 +1,11 @@
 import { type RouterTypes, serve } from "bun";
 import {
+	FrontendRouter,
 	type FrontendRoutes,
-	frontendRoutes,
-} from "./frontend/src/frontendRoutes";
+} from "./frontend/src/frontendRouter";
 import indexPage from "./frontend/src/index.html";
+
+const frontendRouter = new FrontendRouter();
 
 const server = serve({
 	routes: {
@@ -16,7 +18,7 @@ const server = serve({
 				);
 			},
 		},
-		...getServerRoutes(frontendRoutes),
+		...getServerRoutes(frontendRouter.getRoutes()),
 	},
 	development: {
 		console: true,
@@ -30,7 +32,7 @@ function getServerRoutes(frontendRoutes: FrontendRoutes) {
 	const entries = frontendRoutes
 		.keys()
 		.reduce((acc, cur) => {
-			acc.set(cur, indexPage);
+			acc.set(`/${cur}`, indexPage);
 
 			return acc;
 		}, new Map<string, RouterTypes.RouteValue<string>>())

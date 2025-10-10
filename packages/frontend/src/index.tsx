@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./styles.css";
-import { frontendRoutes } from "./frontendRoutes";
+import { FrontendRouter } from "./frontendRouter";
 
 const rootElem = document.getElementById("root");
 
@@ -10,7 +10,15 @@ if (!rootElem) {
 
 const root = createRoot(rootElem);
 
-const page = frontendRoutes.get(window.location.pathname);
+const frontendRouter = new FrontendRouter();
+
+const slug = window.location.pathname.split("/")[1];
+
+if (slug === undefined) {
+	throw new Error("No slug found");
+}
+
+const page = frontendRouter.getRoutes().get(slug);
 
 document.title = page?.title ?? "";
 

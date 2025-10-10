@@ -1,11 +1,14 @@
-import categories from "../categories.json";
+import type { Article } from "../articles/article";
+import { categories } from "../categories";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Main } from "../components/main";
 
-enum 
+type BlogListPageProps = {
+	articles: Article[];
+};
 
-export function BlogListPage() {
+export function BlogListPage({ articles }: BlogListPageProps) {
 	// todo: create a whole page first, and then separate the components
 
 	return (
@@ -14,12 +17,10 @@ export function BlogListPage() {
 			<Main className="h-[calc(100vh---spacing(16))] snap-y snap-mandatory overflow-y-scroll">
 				{categories.map((category) => (
 					<CategoryCard
-						key={category.category_id}
+						key={category.categoryId}
 						description={category.description}
 						name={category.name}
-						articles={category.articles.map((rawArticle) =>
-							toArticleDomain(rawArticle),
-						)}
+						articles={articles}
 					/>
 				))}
 
@@ -36,7 +37,7 @@ export function BlogListPage() {
 type CategoryCardProps = {
 	description: string;
 	name: string;
-	articles: ArticleDomain[];
+	articles: Article[];
 };
 
 function CategoryCard({ description, name, articles }: CategoryCardProps) {
@@ -53,9 +54,10 @@ function CategoryCard({ description, name, articles }: CategoryCardProps) {
 						<ArticleCard
 							createdAt={article.createdAt}
 							estimatedReadingTime={article.estimatedReadingTime}
-							imageUrl={article.imageUrl}
+							imageUrl={article.thumbnailUrl}
 							title={article.title}
-							key={article.articleId}
+							slug={article.slug}
+							key={article.slug}
 						/>
 					))}
 				</div>
@@ -102,6 +104,7 @@ type ArticleCardProps = {
 	imageUrl: string;
 	estimatedReadingTime: number;
 	createdAt: string;
+	slug: string;
 };
 
 function ArticleCard({
@@ -109,9 +112,10 @@ function ArticleCard({
 	estimatedReadingTime,
 	imageUrl,
 	title,
+	slug,
 }: ArticleCardProps) {
 	return (
-		<a href="/detail" className="first:ml-3 last:mr-3">
+		<a href={`/${slug}`} className="first:ml-3 last:mr-3">
 			<div className="relative size-80 snap-start">
 				<img
 					src={imageUrl}
@@ -157,30 +161,4 @@ function ArticleCard({
 			</div>
 		</a>
 	);
-}
-
-type RawArticle = {
-	article_id: string;
-	title: string;
-	estimated_reading_time: number;
-	created_at: string;
-	image_url: string;
-};
-
-type ArticleDomain = {
-	articleId: string;
-	title: string;
-	imageUrl: string;
-	estimatedReadingTime: number;
-	createdAt: string;
-};
-
-function toArticleDomain(raw: RawArticle): ArticleDomain {
-	return {
-		articleId: raw.article_id,
-		createdAt: raw.created_at,
-		estimatedReadingTime: raw.estimated_reading_time,
-		imageUrl: raw.image_url,
-		title: raw.title,
-	};
 }
