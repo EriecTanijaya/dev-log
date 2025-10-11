@@ -1,13 +1,18 @@
 import { useState } from "react";
 
-export function Lightbox() {
+type LightboxProps = {
+	imageUrls: string[];
+};
+
+export function Lightbox({ imageUrls }: LightboxProps) {
 	const [isShowLightbox, setShowLightbox] = useState(false);
+	const displayedImageUrls = imageUrls.slice(0, 3);
 
 	return isShowLightbox ? (
 		<div className="fixed z-1 inset-0 bg-white p-3 overflow-y-scroll gap-3 flex flex-col overscroll-contain">
-			<img src="assets/blog-portrait-image.jpg" alt="blog" />
-			<img src="assets/blog-landscape-image.jpg" alt="blog" />
-			<img src="assets/blog-portrait-image.jpg" alt="blog" />
+			{displayedImageUrls.map((imageUrl) => (
+				<img src={imageUrl} alt="img" key={imageUrl} />
+			))}
 
 			<button
 				type="button"
@@ -19,21 +24,10 @@ export function Lightbox() {
 		</div>
 	) : (
 		<div className="flex justify-between items-center">
-			<img
-				src="assets/blog-landscape-image.jpg"
-				alt="blog"
-				className="w-[calc(33.33%---spacing(3))] object-cover object-center aspect-square"
-			/>
-			<img
-				src="assets/blog-portrait-image.jpg"
-				alt="blog"
-				className="w-[calc(33.33%---spacing(3))] object-cover object-center aspect-square"
-			/>
-			<img
-				src="assets/blog-landscape-image.jpg"
-				alt="blog"
-				className="w-[calc(33.33%---spacing(3))] object-cover object-center aspect-square"
-			/>
+			{imageUrls.map((imageUrl) => (
+				<img src={imageUrl} alt="img" key={imageUrl} />
+			))}
+
 			<button
 				type="button"
 				className="absolute right-1 bg-teal-700 p-4 shadow-xl shadow-teal-700/50 rounded-lg text-white font-semibold text-sm"

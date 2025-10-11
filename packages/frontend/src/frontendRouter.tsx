@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import type { Article } from "./articles/article";
-import { howToCreateThis } from "./articles/how-to-create-this";
+import { howToCreateThis } from "./articles/how-to-create-this/how-to-create-this";
 import { howToCreateThisAgain } from "./articles/how-to-create-this-again";
 import { AboutPage } from "./pages/aboutPage";
 import { BlogListPage } from "./pages/blogListPage";

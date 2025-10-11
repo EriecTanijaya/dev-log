@@ -11,10 +11,24 @@ const server = serve({
 	routes: {
 		"/assets/*": {
 			GET: (req) => {
-				const wantedAsset = req.url.split("/assets/")[1];
+				const url = new URL(req.url);
+
+				const splitted = url.pathname.split("/");
+
+				if (splitted.length < 4) {
+					const wantedAsset = splitted[2];
+					return new Response(
+						Bun.file(`./packages/frontend/src/assets/${wantedAsset}`),
+					);
+				}
+
+				const articleSlug = splitted[2];
+				const wantedAsset = splitted[3];
 
 				return new Response(
-					Bun.file(`./packages/frontend/src/assets/${wantedAsset}`),
+					Bun.file(
+						`./packages/frontend/src/articles/${articleSlug}/assets/${wantedAsset}`,
+					),
 				);
 			},
 		},

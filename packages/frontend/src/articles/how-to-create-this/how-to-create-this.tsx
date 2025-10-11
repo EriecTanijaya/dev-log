@@ -1,7 +1,9 @@
-import { CATEGORY_ID } from "../categories";
-import { Lightbox } from "../components/article/lightbox";
-import { ArticlePage } from "../pages/articlePage";
-import type { Article } from "./article";
+import { CATEGORY_ID } from "../../categories";
+import { Lightbox } from "../../components/article/lightbox";
+import { ArticlePage } from "../../pages/articlePage";
+import type { Article } from "../article";
+
+const imageUrls = ["assets/how-to-create-this/1.jpg"];
 
 function HowToCreateThis() {
 	return (
@@ -27,7 +29,7 @@ function HowToCreateThis() {
 				and determination.
 			</p>
 
-			<Lightbox />
+			<Lightbox imageUrls={imageUrls} />
 
 			<p>
 				The significance of positivity extends beyond mere emotional comfort; it
