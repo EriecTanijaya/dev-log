@@ -1,5 +1,5 @@
 import { CATEGORY_ID } from "../categories";
-import { Lightbox } from "../components/article/lightbox";
+import { ImageGroup } from "../components/article/imageGroup";
 import { ArticlePage } from "../pages/articlePage";
 import type { Article } from "./article";
 
@@ -27,7 +27,7 @@ function HowToCreateThisAgain() {
 				and determination.
 			</p>
 
-			<Lightbox />
+			<ImageGroup />
 
 			<p>
 				The significance of positivity extends beyond mere emotional comfort; it
