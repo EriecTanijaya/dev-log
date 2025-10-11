@@ -1,5 +1,5 @@
 import type { Article } from "../articles/article";
-import { categories } from "../categories";
+import { CATEGORY_ID } from "../categories";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Main } from "../components/main";
@@ -15,14 +15,21 @@ export function BlogListPage({ articles }: BlogListPageProps) {
 		<div>
 			<Header />
 			<Main className="h-[calc(100vh---spacing(16))] snap-y snap-mandatory overflow-y-scroll">
-				{categories.map((category) => (
-					<CategoryCard
-						key={category.categoryId}
-						description={category.description}
-						name={category.name}
-						articles={articles}
-					/>
-				))}
+				<CategoryCard
+					name="Blogs"
+					description="Writings about the stuff that i interested with"
+					articles={articles.filter(
+						(article) => article.categoryId === CATEGORY_ID.BLOG,
+					)}
+				/>
+
+				{/* <CategoryCard
+					name="Projects"
+					description="Some sort of development logs"
+					articles={articles.filter(
+						(article) => article.categoryId === CATEGORY_ID.PROJECT,
+					)}
+				/> */}
 
 				<MediaCategoryCard
 					description="Things that i want to shared with you"

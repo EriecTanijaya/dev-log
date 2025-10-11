@@ -1,7 +1,6 @@
 import type { ReactElement } from "react";
 import type { Article } from "./articles/article";
 import { howToCreateThis } from "./articles/how-to-create-this/how-to-create-this";
-import { howToCreateThisAgain } from "./articles/how-to-create-this-again";
 import { AboutPage } from "./pages/aboutPage";
 import { BlogListPage } from "./pages/blogListPage";
 
@@ -14,7 +13,7 @@ export type FrontendRoutes = Map<string, Page>;
 
 export class FrontendRouter {
 	private routes: FrontendRoutes = new Map<string, Page>();
-	private articles: Article[] = [howToCreateThis, howToCreateThisAgain];
+	private articles: Article[] = [howToCreateThis];
 
 	constructor() {
 		this.setupRoutes();
