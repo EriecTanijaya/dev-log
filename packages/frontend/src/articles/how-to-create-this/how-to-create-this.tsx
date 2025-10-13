@@ -1,4 +1,4 @@
-import { CATEGORY_ID } from "../../categories";
+import { CATEGORY } from "../../category";
 import { ImageGroup } from "../../components/article/imageGroup";
 import { ArticlePage } from "../../pages/articlePage";
 import type { Article } from "../article";
@@ -10,9 +10,11 @@ const imageUrls = [
 	"assets/how-to-create-this/1.jpg",
 ];
 
+const createdAt = "?? OCT 2025";
+
 function HowToCreateThis() {
 	return (
-		<ArticlePage>
+		<ArticlePage categoryName={CATEGORY.PROJECT.name} createdAt={createdAt}>
 			<img
 				src="assets/portrait.jpg"
 				alt="blog"
@@ -70,7 +72,7 @@ export const howToCreateThis: Article = {
 	component: <HowToCreateThis />,
 	title: "How to create this?",
 	estimatedReadingTime: 24,
-	createdAt: "10 October 2025",
+	createdAt,
 	thumbnailUrl: "assets/how-to-create-this/thumbnail.jpg",
-	categoryId: CATEGORY_ID.BLOG,
+	categoryId: CATEGORY.BLOG.id,
 };

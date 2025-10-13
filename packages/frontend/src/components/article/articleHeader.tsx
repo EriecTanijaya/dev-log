@@ -1,4 +1,9 @@
-export function ArticleHeader() {
+type ArticleHeaderProps = {
+	categoryName: string;
+	createdAt: string;
+};
+
+export function ArticleHeader({ categoryName, createdAt }: ArticleHeaderProps) {
 	return (
 		<header className="flex fixed w-full h-16 p-4 items-center bg-slate-200 top-0 gap-3 z-1">
 			<a href="/">
@@ -19,7 +24,7 @@ export function ArticleHeader() {
 					Eriec // Dev/Log
 				</h2>
 				<p className="text-xs text-teal-700 font-semibold">
-					29 JULY 1998 - BLOG
+					{createdAt} - {categoryName}
 				</p>
 			</div>
 		</header>

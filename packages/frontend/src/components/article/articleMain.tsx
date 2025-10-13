@@ -6,5 +6,5 @@ type ArticleMainProps = {
 };
 
 export function ArticleMain({ children }: ArticleMainProps) {
-	return <Main className="p-3 mb-16 flex flex-col gap-6">{children}</Main>;
+	return <Main className="p-3 mb-6 flex flex-col gap-6">{children}</Main>;
 }

@@ -1,5 +1,5 @@
 import type { Article } from "../articles/article";
-import { CATEGORY_ID } from "../categories";
+import { CATEGORY } from "../category";
 import { Footer } from "../components/footer";
 import { Header } from "../components/header";
 import { Main } from "../components/main";
@@ -19,7 +19,7 @@ export function BlogListPage({ articles }: BlogListPageProps) {
 					name="Blogs"
 					description="Writings about the stuff that i interested with"
 					articles={articles.filter(
-						(article) => article.categoryId === CATEGORY_ID.BLOG,
+						(article) => article.categoryId === CATEGORY.BLOG.id,
 					)}
 				/>
 

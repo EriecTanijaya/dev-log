@@ -5,7 +5,8 @@
 	"private": true,
 	"scripts": {
 		"lint": "bunx biome check --write",
-		"start:dev": "bun --hot ./packages/index.ts"
+		"start:dev": "bun --hot ./packages/index.ts",
+		"tsc": "tsc"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.2.4",
